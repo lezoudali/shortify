@@ -1,0 +1,6 @@
+Install Python3 using Homebrew
+Make sure Python3 bin dir is added to your $PATH
+install pipenv
+pipenv shell
+brew install redis
+brew services start redis
