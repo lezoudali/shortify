@@ -1,6 +1,25 @@
-Install Python3 using Homebrew
-Make sure Python3 bin dir is added to your $PATH
-install pipenv
-pipenv shell
-brew install redis
-brew services start redis
+### Installation and running dev server
+
+- Install Python3 (using [Homebrew](http://docs.python-guide.org/en/latest/starting/install3/osx/))
+
+- Make sure the Python3 bin directory is added to your PATH. Example:
+    `$ export PATH=/Users/lezoudali/Library/Python/3.6/bin:$PATH`
+
+- Install [pipenv](https://docs.pipenv.org/) using `pip`.
+
+- Start the `pipenv` virtualenv
+    `$ pipenv shell`
+
+- Install dependencies with `pipenv`
+    `$ pipenv install --dev`
+
+- Install redis using homebrew
+    `$ brew install redis`
+    `$ brew services start redis`
+
+- Add the `shortify` directory to your PYTHONPATH. Example:
+    `$ export PYTHONPATH='/Users/lezoudali/Dev/shortify`
+
+- Run `$ make dev` to start dev server
+
+- Run `$ make test` to run tests
