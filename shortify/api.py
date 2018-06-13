@@ -31,8 +31,7 @@ def redirect_to_dest(path):
     path = request.path[1:]
     destination = app.db.get(path)
     if destination:
-        if (not destination.startswith('http://') and
-                not destination.startswith('https://')):
+        if not str(destination).startswith(('http://', 'https://')):
             destination = f"http://{destination}"
         return redirect(destination)
 
