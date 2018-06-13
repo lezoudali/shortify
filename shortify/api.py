@@ -29,7 +29,7 @@ def welcome():
 
 def redirect_to_dest(path):
     path = request.path[1:]
-    destination = str(app.db.get(path))
+    destination = app.db.get(path)
     if destination:
         if (not destination.startswith('http://') and
                 not destination.startswith('https://')):
