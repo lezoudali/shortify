@@ -6,6 +6,6 @@ clean:
 	rm -rf `find . -name .pytest_cache`
 
 dev:
-	python shortify/instance.py
+	python shortify/app.py
 
 .PHONY: clean test
