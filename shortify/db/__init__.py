@@ -16,8 +16,11 @@ def default_connection_options():
 
 
 def create_db(**connection_options):
-    options = {**default_connection_options(), **connection_options}
+    get_options = lambda: {**default_connection_options(), **connection_options}
+    redis_url = os.getenv('REDIS_URL')
 
-    conn = redis.StrictRedis(**options)
+
+    conn = (redis.StrictRedis.from_url(redis_url) if redis_url
+            else redis.StrictRedis(**get_options()))
 
     return RedisStorage(conn)

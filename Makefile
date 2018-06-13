@@ -6,6 +6,6 @@ clean:
 	rm -rf `find . -name .pytest_cache`
 
 dev:
-	python shortify/app.py
+	FLASK_ENV=development FLASK_APP=shortify.app.py:application flask run
 
 .PHONY: clean test
