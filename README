@@ -1,11 +1,11 @@
 ### Testing heroku application wth cURL
 
 ```bash
-$ curl -X POST https://pure-fjord-41674.herokuapp.com/api/shortify  -d "destination=https://www.schireson.com/"
+$ curl -X POST https://shortify-lezou.herokuapp.com/api/shortify  -d "destination=https://www.schireson.com/"
 {"destination":"https://www.schireson.com/","slug":"QWPrDUx"}
 ```
 
-- Visit `https://pure-fjord-41674.herokuapp.com/QWPrDUx` to redireted to `https://www.schireson.com/`
+- Visit `https://shortify-lezou.herokuapp.com/QWPrDUx` to be redireted to `https://www.schireson.com/`
 
 ### Installation and running dev server
 
