@@ -31,8 +31,10 @@ def redirect_to_dest(path):
     path = request.path[1:]
     destination = app.db.get(path)
     if destination:
+        app.logger.info(destination)
         if not str(destination).startswith(('http://', 'https://')):
-            destination = f"http://{destination}"
+            app.logger.info(destination)
+            destination = "http://" + destination
         return redirect(destination)
 
     return http.bad_request('invalid short link')
