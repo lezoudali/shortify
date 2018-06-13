@@ -1,7 +1,8 @@
 from .exceptions import IntegrityError
+from .abstract import AbstractDBStorage
 
 
-class RedisStorage:
+class RedisStorage(AbstractDBStorage):
     def __init__(self, connection):
         self._conn = connection
 
