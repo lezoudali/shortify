@@ -8,6 +8,7 @@ flask = "*"
 redis = "*"
 pytest = "*"
 webargs = "*"
+gunicorn = "*"
 
 [dev-packages]
 

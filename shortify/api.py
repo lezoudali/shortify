@@ -23,6 +23,10 @@ def shortify(args):
     })
 
 
+def welcome():
+    return 'welcome to shortify'
+
+
 def redirect_to_dest(path):
     path = request.path[1:]
     destination = app.db.get(path)
@@ -45,4 +49,5 @@ def _generate_unique_slug():
 resources = {
     shortify: ('/api/shortify', ['POST'], {}),
     redirect_to_dest: ('/<path:path>', ['GET'], {}),
+    welcome: ('/', ['GET'], {}),
 }

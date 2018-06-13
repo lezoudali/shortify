@@ -1,1 +1,1 @@
-web: gunicorn shortify.wsgi --log-file=-
+web: gunicorn shortify.app --log-file=-
