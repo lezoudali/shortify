@@ -20,7 +20,11 @@ def create_db(**connection_options):
     redis_url = os.getenv('REDIS_URL')
 
 
-    conn = (redis.StrictRedis.from_url(redis_url) if redis_url
+    conn = (redis.StrictRedis.from_url(
+                redis_url,
+                decode_responses=True,
+                charset='utf-8'
+            ) if redis_url
             else redis.StrictRedis(**get_options()))
 
     return RedisStorage(conn)
