@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - redis
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis"

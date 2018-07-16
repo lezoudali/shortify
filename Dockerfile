@@ -1,11 +1,12 @@
-FROM python:3.6-alpine
-LABEL maintainer='lezou.dali@gmail.com'
+FROM ubuntu:18.04
 
-RUN pip3 install pipenv
+RUN apt update && apt install python3-pip -y && pip3 install pipenv
 
-WORKDIR '/usr/local/shortify'
-COPY . .
+
+COPY . /app
+WORKDIR /app
 
 RUN pipenv install --system
 
 
+ENTRYPOINT
