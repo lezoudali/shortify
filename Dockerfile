@@ -1,12 +1,25 @@
-FROM ubuntu:18.04
+# Pull base image
+FROM python:3.6-alpine
+MAINTAINER Lezou Dali <lezou.dali@gmail.com>
 
-RUN apt update && apt install python3-pip -y && pip3 install pipenv
+# Ensures that console output is not buffered by Docker
+ENV PYTHONDONTWRITEBYTECODE 1
+
+# Ensures that Python does not write `.pyc` files
+ENV PYTHONUNBUFFERED 1
+
+ENV PYTHONPATH /app/shortify
 
 
-COPY . /app
+# Set work directory
 WORKDIR /app
 
-RUN pipenv install --system
+# Install dependencies
+RUN pip install --upgrade pip && pip install pipenv
+
+COPY . /app
+RUN pipenv install --system --skip-lock
 
 
-ENTRYPOINT
+CMD ["gunicorn", "--workers=2", "--bind=0.0.0.0:8000", "shortify.app"]
+
