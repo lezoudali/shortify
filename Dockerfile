@@ -11,9 +11,7 @@ RUN pip install --upgrade pip && pip install pipenv
 ADD . /app
 WORKDIR /app
 
-
 RUN pipenv install --system --skip-lock
-
 
 EXPOSE 5000
 
