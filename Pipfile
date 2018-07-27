@@ -6,11 +6,11 @@ name = "pypi"
 [packages]
 flask = "*"
 redis = "*"
-pytest = "*"
 webargs = "*"
 gunicorn = "*"
 
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.6"
