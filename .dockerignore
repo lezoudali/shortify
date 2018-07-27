@@ -1,0 +1,11 @@
+tests
+
+.dockerignore
+
+.git
+
+docker-compose.*
+
+Dockerfile
+
+Procfile
