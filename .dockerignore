@@ -1,6 +1,7 @@
 tests
 
 .dockerignore
+.gitignore
 
 .git
 
@@ -9,3 +10,5 @@ docker-compose.*
 Dockerfile
 
 Procfile
+
+Pipfile.lock
